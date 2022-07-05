@@ -92,6 +92,7 @@ def game():
     print("\n")
 
 def files():
+    os.system('cls')
     guarda = []
     for i in range(1,6):
         sss = input("inserta 5 nombres para jugar: ")
@@ -111,8 +112,36 @@ def files():
 
 
 def run():
+    print("          !!!!!! Ahorcado GAME!!!!!             ")
+
+    print("      1- GAME PLAY   ")
+    print("      2- CONFIG      ")
+    print("      3- EXIT        ")
     
-    game()
+    
+    option = (input("CHOOSE AN OPTION: "))
+    if len(option) != 1:
+        print("please one number" )
+        os.system('cls')
+        return run()
+    elif option not in "1,2,3":
+        print("choose a correct option")
+        os.system('cls')
+        return run()
+
+    elif option == "1":
+        game()
+        os.system('cls')
+        return run()
+    elif option == "2":
+        print("config" ) 
+        files()
+        os.system('cls')
+        return run()
+    elif option == "3":
+        exit()
+
+
     
 
 
